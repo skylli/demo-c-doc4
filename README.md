@@ -9,6 +9,10 @@
 ### 使用
 把 demo-c-doc.c 拷贝到 wilddog-client-c\examples\linux\ 下，点击此下载[wilddog-client-c SDK](https://github.com/WildDogTeam/wilddog-client-c.git)
 
+修改 Url, 若你还没有应用的 Url 需要先到 wilddog 进行注册
+
+ #define DEMO_YOUR_URL "coap://your_appi.wilddogio.com"   
+
 编译：
 
 	$ make
