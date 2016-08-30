@@ -7,11 +7,15 @@
     git clone https://github.com/skylli/demo-c-doc4.git
 
 ### 使用
-1、把 demo-c-doc.c 拷贝到 wilddog-client-c\examples\linux\ 下，点击此下载[wilddog-client-c SDK](https://github.com/WildDogTeam/wilddog-client-c.git) 。
-2、编译：
+把 demo-c-doc.c 拷贝到 wilddog-client-c\examples\linux\ 下，点击此下载[wilddog-client-c SDK](https://github.com/WildDogTeam/wilddog-client-c.git)
+
+编译：
+
 	$ make
     $ make examples
-3、使用计算器
+
+使用计算器
+
     $./bin/demo-c-doc
 
 ### 更多示例
