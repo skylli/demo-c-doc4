@@ -50,12 +50,11 @@ STATIC Wilddog_Return_T sum_count(const Wilddog_Node_T *p_sn,Wilddog_T wilddog)
 	int len ;
 	if( !p_sn || !p_sn->p_wn_child)
 		return WILDDOG_ERR_NULL;
-	wilddog_debug_printnode(p_sn);
 	/*find sum/augend/addend node */
 	p_node = p_sn->p_wn_child;
-	p_augend = node_get(p_node,"augend");
-	p_addend = node_get(p_node,"append");
-	p_sum = node_get(p_node,"sum");
+	p_augend = node_get(p_node,DEMO_AUGEND);
+	p_addend = node_get(p_node,DEMO_ADDEND);
+	p_sum = node_get(p_node,DEMO_SUM);
 	if( !p_augend || !p_addend || !p_sum )
 	{
 		wilddog_debug("deficiency of data !");
