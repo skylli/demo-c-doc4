@@ -46,6 +46,9 @@ STATIC Wilddog_Node_T *node_get(Wilddog_Node_T *p_head,const char* key_name)
 /* count sum and set to server */
 STATIC Wilddog_Return_T sum_count(const Wilddog_Node_T *p_sn,Wilddog_T wilddog)
 {
+	static s32 old_augend = 0;
+	static s32 old_addend = 0;
+	
     Wilddog_Node_T *p_node,*p_augend,*p_addend,*p_sum;
 	int len ;
 	if( !p_sn || !p_sn->p_wn_child)
@@ -63,6 +66,13 @@ STATIC Wilddog_Return_T sum_count(const Wilddog_Node_T *p_sn,Wilddog_T wilddog)
 	/* add */
 	s32 augend = *(s32*)wilddog_node_getValue(p_augend,&len);	
 	s32 addend = *(s32*)wilddog_node_getValue(p_addend,&len);
+	
+	if(old_augend == augend  && old_addend == addend)
+		return WILDDOG_ERR_NOERR;
+	
+	old_augend = augend;
+	old_addend = addend;
+	
 	s32 sum = augend + addend;
 	wilddog_node_setValue(p_sum,(u8*)&sum,sizeof(sum));
 	printf("sum count : %ld + %ld = %ld\n",augend,addend,sum);
